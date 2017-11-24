@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-public partial class Material 
+public partial class MaterialSample 
 {
 	/// <summary>
 	/// Produktfamilie
@@ -46,7 +46,7 @@ public partial class Material
 	}
 }
 
-public class FoamMaterial : Material 
+public class FoamMaterial : MaterialSample 
 {
 	public string Type 
 	{
@@ -57,7 +57,7 @@ public class FoamMaterial : Material
 	}
 }
 
-public class TechnicalPlasticMaterial : Material
+public class TechnicalPlasticMaterial : MaterialSample
 {
 	public string Type 
 	{
@@ -69,7 +69,7 @@ public class TechnicalPlasticMaterial : Material
 }
 
 
-public class RubberMaterial : Material
+public class RubberMaterial : MaterialSample
 {
 	public string Type 
 	{

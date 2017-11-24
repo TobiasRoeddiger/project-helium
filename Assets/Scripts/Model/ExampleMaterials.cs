@@ -1,11 +1,11 @@
 ﻿using System;
 
-public partial class Material
+public partial class MaterialSample
 {
-	public static Material ElastofoamI_133;
-	public static Material UltradurB_4300;
+	public static MaterialSample ElastofoamI_133;
+	public static MaterialSample UltradurB_4300;
 
-	static Material() 
+	static MaterialSample() 
 	{
 		ElastofoamI_133 = new FoamMaterial() 
 		{
