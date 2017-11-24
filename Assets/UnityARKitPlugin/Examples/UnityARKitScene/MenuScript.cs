@@ -8,7 +8,7 @@ public class MenuScript : MonoBehaviour {
 	private GameObject detectingObject;
 
 	public void Start() {
-		detectingObject = GameObject.Find ("StartButton");
+		detectingObject = GameObject.Find ("DetectingObjectText");
 		detectingObject.SetActive (false);
 	}
 
