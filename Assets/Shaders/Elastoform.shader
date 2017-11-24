@@ -1,6 +1,6 @@
 ﻿Shader "Custom/Elastoform" {
 	Properties {
-		_Color ("Color", Color) = (0.539, 0.5, 0.430, 1)
+		_Color ("Color", Color) = (0.434, 0.402, 0.348, 1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_BumpMap ("Normalmap", 2D) = "bump" {}
 		_Glossiness ("Smoothness", Range(0,1)) = 0.25
