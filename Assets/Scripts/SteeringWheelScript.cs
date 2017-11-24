@@ -29,7 +29,7 @@ public class SteeringWheelScript : MonoBehaviour {
 		steeringWheel.SetActive (false);
 	}
 
-	public void HudToggleButtonClicked() {
+	public void HudToggleButtonClicked(string name) {
 		toggleState = !toggleState;
 	}
 
@@ -39,7 +39,7 @@ public class SteeringWheelScript : MonoBehaviour {
 			timer += Time.deltaTime;
 			if (timer > 3) {
 				timer = -1;
-				HudToggleButtonClicked ();
+				HudToggleButtonClicked ("");
 			}
 		}
 	}

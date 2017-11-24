@@ -18,7 +18,11 @@ public partial class MaterialSample
 	/// <summary>
 	/// Werkstoffart
 	/// </summary>
-	public string Type { get; }
+	public virtual string Type { 
+		get { 
+			return "Generic Material";
+		}
+	}
 
 	/// <summary>
 	/// Elastizitätsmodul (MPa)
@@ -48,7 +52,7 @@ public partial class MaterialSample
 
 public class FoamMaterial : MaterialSample 
 {
-	public string Type 
+	public override string Type 
 	{
 		get 
 		{
@@ -59,7 +63,7 @@ public class FoamMaterial : MaterialSample
 
 public class TechnicalPlasticMaterial : MaterialSample
 {
-	public string Type 
+	public override string Type 
 	{
 		get 
 		{
@@ -71,7 +75,7 @@ public class TechnicalPlasticMaterial : MaterialSample
 
 public class RubberMaterial : MaterialSample
 {
-	public string Type 
+	public override string Type 
 	{
 		get 
 		{
