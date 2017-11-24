@@ -3,8 +3,8 @@
 
 Shader "DynamicAmbient" {
 	Properties {
-		_MainTex ("Diffuse (RGB) Alpha (A)", 2D) = "white" {}
-		_BumpMap ("Normal (Normal)", 2D) = "bump" {}
+		_Color ("Color", Color) = (1, 1, 1, 1)
+		_MainTex ("Normal (Normal)", 2D) = "bump" {}
 	}
 
 	SubShader {
@@ -39,14 +39,13 @@ Shader "DynamicAmbient" {
 					return o;
 				}
 
+				fixed4 _Color;
 				sampler2D _MainTex;
-				sampler2D _BumpMap;
 				samplerCUBE _WorldCube;
 
 				float4 frag(v2f i) : COLOR
 				{
-					fixed4 albedo = tex2D(_MainTex, i.uv);
-					float3 normal = UnpackNormal(tex2D(_BumpMap, i.uv));
+					float3 normal = UnpackNormal(tex2D(_MainTex, i.uv));
 
 					float3 worldNormal = normalize((i.tangent * normal.x) + (i.binormal * normal.y) + (i.normal * normal.z));
 
@@ -57,8 +56,8 @@ Shader "DynamicAmbient" {
 					linearColor += nSquared.z * texCUBEbias(_WorldCube, float4(0.00001, 0.00001, worldNormal.z, 999)).rgb;
 
 					float4 c;
-					c.rgb = linearColor * albedo.rgb;
-					c.a = albedo.a;
+					c.rgb = linearColor * _Color.rgb;
+					c.a = _Color.a;
 					return c;
 				}
 			ENDCG
