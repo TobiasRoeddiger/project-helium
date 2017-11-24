@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: a51e348702b484bd680075e8c93f6ecc
+timeCreated: 1511531964
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: wallSkin
+    100002: wallSkin_MeshPart0
+    100004: wallSkin_MeshPart1
+    100006: wallSkin_MeshPart2
+    100008: wallSkin_MeshPart3
+    100010: wallSkin_MeshPart4
+    100012: wallSkin_MeshPart5
+    100014: wallSkin_MeshPart6
+    100016: wallSkin_MeshPart7
+    100018: wallSkin_MeshPart8
+    100020: wallSkin_MeshPart9
+    100022: //RootNode
+    400000: wallSkin
+    400002: wallSkin_MeshPart0
+    400004: wallSkin_MeshPart1
+    400006: wallSkin_MeshPart2
+    400008: wallSkin_MeshPart3
+    400010: wallSkin_MeshPart4
+    400012: wallSkin_MeshPart5
+    400014: wallSkin_MeshPart6
+    400016: wallSkin_MeshPart7
+    400018: wallSkin_MeshPart8
+    400020: wallSkin_MeshPart9
+    400022: //RootNode
+    2300000: wallSkin_MeshPart0
+    2300002: wallSkin_MeshPart1
+    2300004: wallSkin_MeshPart2
+    2300006: wallSkin_MeshPart3
+    2300008: wallSkin_MeshPart4
+    2300010: wallSkin_MeshPart5
+    2300012: wallSkin_MeshPart6
+    2300014: wallSkin_MeshPart7
+    2300016: wallSkin_MeshPart8
+    2300018: wallSkin_MeshPart9
+    3300000: wallSkin_MeshPart0
+    3300002: wallSkin_MeshPart1
+    3300004: wallSkin_MeshPart2
+    3300006: wallSkin_MeshPart3
+    3300008: wallSkin_MeshPart4
+    3300010: wallSkin_MeshPart5
+    3300012: wallSkin_MeshPart6
+    3300014: wallSkin_MeshPart7
+    3300016: wallSkin_MeshPart8
+    3300018: wallSkin_MeshPart9
+    4300000: wallSkin_MeshPart0
+    4300002: wallSkin_MeshPart1
+    4300004: wallSkin_MeshPart2
+    4300006: wallSkin_MeshPart3
+    4300008: wallSkin_MeshPart4
+    4300010: wallSkin_MeshPart5
+    4300012: wallSkin_MeshPart6
+    4300014: wallSkin_MeshPart7
+    4300016: wallSkin_MeshPart8
+    4300018: wallSkin_MeshPart9
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wallSkinMat
+    second: {fileID: 2100000, guid: bac463e848eb649c1b83596b2c19f76c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
