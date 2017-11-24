@@ -18,11 +18,14 @@ public class SteeringWheelScript : MonoBehaviour {
 		set {
 			_toggleState = value;
 			Hud.SetActive (value);
+			toggleButton.GetComponentInChildren<Text>().text = (_toggleState ? "^" : "v");
 		}
 	}
 
 	public void Start() {
 		Hud = GameObject.Find ("Hud");
+
+		toggleButton = GameObject.Find ("ToggleButton");
 		toggleState = false;
 
 		steeringWheel = GameObject.Find ("SteeringWheel");
