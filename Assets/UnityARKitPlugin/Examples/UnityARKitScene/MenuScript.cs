@@ -46,7 +46,7 @@ public class MenuScript : MonoBehaviour {
 			if (timeLeft < 0.0f)
 			{
 				running = false;
-				//detectingObject.SetActive (false);
+				detectingObject.SetActive (false);
 				steeringWheel.SetActive (true);
 			}
 		}

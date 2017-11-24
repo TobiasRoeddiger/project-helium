@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -598,8 +598,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 294771741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 860, y: 411, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 459, y: 202, z: 0}
+  m_LocalScale: {x: 1.1475, y: 1.1475, z: 1.1475}
   m_Children:
   - {fileID: 165458843}
   - {fileID: 1912175318}
@@ -855,6 +855,10 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3cefcd1df5bfb4110b7de2a44f956478, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bad6d9e8cf88e6c4ab9e52e6c91d4bfe, type: 2}
+    - target: {fileID: 2300002, guid: 3cefcd1df5bfb4110b7de2a44f956478, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bad6d9e8cf88e6c4ab9e52e6c91d4bfe, type: 2}
