@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SteeringWheelScript : MonoBehaviour {
 
 	private GameObject toggleButton;
 	private GameObject steeringWheel;
 	private GameObject Hud;
-	public float timer;
 
 	private bool _toggleState;
 	public bool toggleState {
@@ -29,7 +29,6 @@ public class SteeringWheelScript : MonoBehaviour {
 		toggleState = false;
 
 		steeringWheel = GameObject.Find ("SteeringWheel");
-		steeringWheel.SetActive (false);
 	}
 
 	public void HudToggleButtonClicked(string name) {
@@ -38,12 +37,5 @@ public class SteeringWheelScript : MonoBehaviour {
 
 	public void Update()
 	{
-		if (timer >= 0) {
-			timer += Time.deltaTime;
-			if (timer > 3) {
-				timer = -1;
-				HudToggleButtonClicked ("");
-			}
-		}
 	}
 }

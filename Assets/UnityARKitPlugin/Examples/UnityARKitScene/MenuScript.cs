@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour {
 
@@ -15,7 +16,7 @@ public class MenuScript : MonoBehaviour {
 		detectingObject.SetActive (false);
 
 		steeringWheel = GameObject.Find ("SteeringWheel");
-		steeringWheel.SetActive (false);
+		//steeringWheel.SetActive (false);
 
 	}
 
@@ -47,7 +48,7 @@ public class MenuScript : MonoBehaviour {
 			{
 				running = false;
 				detectingObject.SetActive (false);
-				steeringWheel.SetActive (true);
+				SceneManager.LoadScene ("SteeringWheelScene", LoadSceneMode.Single);
 			}
 		}
 	}
