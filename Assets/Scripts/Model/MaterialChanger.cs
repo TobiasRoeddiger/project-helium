@@ -1,11 +1,10 @@
 ﻿using System;
 using UnityEngine;
-using UnityEditor;
 
 public static class MaterialChanger
 {
 	public static void ChangeMaterial(this GameObject gObject, string texture, MaterialSample sample = null) {
-		Material newMat = (Material) AssetDatabase.LoadAssetAtPath("Assets/Materials/" + texture + ".mat", typeof(Material));
+		Material newMat = (Material) Resources.Load("Materials/" + texture, typeof(Material));
 
 		gObject.GetComponent<Renderer>().material = newMat;
 
