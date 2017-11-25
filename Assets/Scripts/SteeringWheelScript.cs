@@ -94,7 +94,7 @@ public class SteeringWheelScript : MonoBehaviour {
 	}
 
 	public void Material_Btn_3_Clicked(string name) {
-		GameObject.Find ("SteeringWheel").ChangeMaterial ("Spotted", MaterialSample.UltradurB_4300);
+		GameObject.Find ("SteeringWheel").ChangeMaterial ("gruen", MaterialSample.UltradurB_4300);
 		GameObject.Find ("SteeringWheel").GetComponent<MeshFilter> ().mesh = InitialSteeringWheelMesh;
 	}
 
