@@ -4,6 +4,7 @@ public partial class MaterialSample
 {
 	public static MaterialSample ElastofoamI_133;
 	public static MaterialSample UltradurB_4300;
+	public static MaterialSample Aluminum_5052;
 
 	static MaterialSample() 
 	{
@@ -16,6 +17,17 @@ public partial class MaterialSample
 			Density = 524,
 			TensileStrength = 4543,
 			ElongationAtRupture = 164
+		};
+
+		Aluminum_5052 = new MetalMaterial () 
+		{
+			Family = "Aluminum",
+			SubFamily = "",
+			MaterialCode = "5052-O",
+			ElasticModulus = 70300,
+			Density = 2680,
+			TensileStrength = 193000,
+			ElongationAtRupture = 25
 		};
 
 		UltradurB_4300 = new TechnicalPlasticMaterial () 
