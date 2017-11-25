@@ -1,30 +1,23 @@
 fileFormatVersion: 2
-guid: 943e272a3b79d0d468a1921d4bd961e3
-timeCreated: 1511544245
+guid: ac32c346ec0ba4444ba30d3250d851e0
+timeCreated: 1511580493
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: default
-    100002: default_MeshPart0
-    100004: default_MeshPart1
-    100006: //RootNode
+    100002: //RootNode
     400000: default
-    400002: default_MeshPart0
-    400004: default_MeshPart1
-    400006: //RootNode
-    2300000: default_MeshPart0
-    2300002: default_MeshPart1
-    3300000: default_MeshPart0
-    3300002: default_MeshPart1
-    4300000: default_MeshPart0
-    4300002: default_MeshPart1
+    400002: //RootNode
+    2300000: default
+    3300000: default
+    4300000: default
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: defaultMat
-    second: {fileID: 2100000, guid: 2632aca2888930c4cb69cafce856e921, type: 2}
+    second: {fileID: 2100000, guid: 4771476b829b0f54e9e5f98612e2c64c, type: 2}
   materials:
     importMaterials: 0
     materialName: 0
