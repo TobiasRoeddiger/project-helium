@@ -11,6 +11,8 @@ public static class MaterialChanger
 		if (sample != null) {
 			gObject.GetComponent<Meshinator>().m_ForceMultiplier = (float) (1 / sample.ElasticModulus) * 500;
 		}
+
+		MaterialSample.SelectedSample = sample;
 	}
 }
 
