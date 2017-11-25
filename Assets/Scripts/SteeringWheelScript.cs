@@ -35,6 +35,30 @@ public class SteeringWheelScript : MonoBehaviour {
 		toggleState = !toggleState;
 	}
 
+	public void Physic_Btn_1_Clicked(string name) {
+
+	}
+
+	public void Physic_Btn_2_Clicked(string name) {
+
+	}
+
+	public void Physic_Btn_3_Clicked(string name) {
+
+	}
+
+	public void Material_Btn_1_Clicked(string name) {
+
+	}
+
+	public void Material_Btn_2_Clicked(string name) {
+
+	}
+
+	public void Material_Btn_3_Clicked(string name) {
+
+	}
+
 	public void Update()
 	{
 	}
