@@ -33,7 +33,7 @@ public partial class MaterialSample
 	/// </summary>
 	public double Density { get; set; }
 	/// <summary>
-	/// Zugfestigkeit (kPa)
+	/// Zugfestigkeit (MPa)
 	/// </summary>
 	public double TensileStrength { get; set; }
 	/// <summary>
