@@ -48,15 +48,15 @@ public class SteeringWheelScript : MonoBehaviour {
 	}
 
 	public void Material_Btn_1_Clicked(string name) {
-
+		GameObject.Find ("lenkradv3/default").ChangeMaterial ("Elastoform", MaterialSample.ElastofoamI_133);
 	}
 
 	public void Material_Btn_2_Clicked(string name) {
-
+		GameObject.Find ("lenkradv3/default").ChangeMaterial ("Metallic", MaterialSample.UltradurB_4300);
 	}
 
 	public void Material_Btn_3_Clicked(string name) {
-
+		GameObject.Find ("lenkradv3/default").ChangeMaterial ("Spotted", MaterialSample.UltradurB_4300);
 	}
 
 	public void Update()
