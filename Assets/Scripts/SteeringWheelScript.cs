@@ -14,6 +14,10 @@ public class SteeringWheelScript : MonoBehaviour {
 
 	private Mesh InitialSteeringWheelMesh;
 
+	bool pressingFireBall = false;
+
+	private bool infoToggleState;
+
 	private bool _toggleState;
 	public bool toggleState {
 		get {
@@ -43,7 +47,16 @@ public class SteeringWheelScript : MonoBehaviour {
 	public void HudToggleButtonClicked(string name) {
 		toggleState = !toggleState;
 	}
-		
+
+	public void InfoToggleButtonClicked(string name) {
+		infoToggleState = !infoToggleState;
+		if (infoToggleState) {
+			SceneManager.LoadScene ("infoMenue", LoadSceneMode.Additive);
+		} else {
+			Destroy(GameObject.Find ("infoWrapper"));
+		}
+	}
+
 	public void Physic_Btn_1_Clicked(string name) {	
 
 		var r = (float) steeringWheel.GetComponent<Renderer> ().bounds.size[2] / 2;
@@ -62,7 +75,6 @@ public class SteeringWheelScript : MonoBehaviour {
 		Destroy (newCube, 6f);
 	}
 
-	bool pressingFireBall = false;
 	public void Physic_Btn_2_Clicked(string name) {
 		pressingFireBall = true;
 	}

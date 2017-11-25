@@ -32,7 +32,7 @@ public class InfoMenueScript : MonoBehaviour {
 	void FillMenu() {
 		MaterialSample s = MaterialSample.SelectedSample;
 
-		GameObject.Find ("InfoMenue/FamilyName").GetComponent<Text> ().text = s.Name;
-		GameObject.Find ("InfoMenue/PropertiesValues").GetComponent<Text> ().text = string.Format("{0}\n{1}\n{2}", s.Density, s.TensileStrength, s.ElongationAtRupture);
+		GameObject.Find ("MenueWrapper/FamilyName").GetComponent<Text> ().text = s.Name;
+		GameObject.Find ("MenueWrapper/PropertiesValues").GetComponent<Text> ().text = string.Format("{0}\n{1}\n{2}", s.Density, s.TensileStrength, s.ElongationAtRupture);
 	}
 }
