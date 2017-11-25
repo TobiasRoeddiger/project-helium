@@ -1,17 +1,16 @@
 ﻿using System;
 using UnityEngine;
+using UnityEditor;
 
 public static class MaterialChanger
 {
 	public static void ChangeMaterial(this GameObject gObject, string texture, MaterialSample sample = null) {
-		Material newMat = Resources.Load(texture, typeof(Material)) as Material;
+		Material newMat = (Material) AssetDatabase.LoadAssetAtPath("Assets/Materials/" + texture + ".mat", typeof(Material));
 
-		foreach (var renderer in gObject.GetComponentsInChildren<Renderer>())
-			renderer.material = newMat;
+		gObject.GetComponent<Renderer>().material = newMat;
 
 		if (sample != null) {
-			// TODO: assign physical properties
-
+			gObject.GetComponent<Meshinator>().m_ForceMultiplier = (float) (1 / sample.ElasticModulus) * 300;
 		}
 	}
 }
