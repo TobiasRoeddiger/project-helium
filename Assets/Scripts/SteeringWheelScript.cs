@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Timers;
 
 public class SteeringWheelScript : MonoBehaviour {
 
 	private GameObject toggleButton;
 	private GameObject steeringWheel;
 	private GameObject Hud;
+	private GameObject Cube;
 
 	private int _barStep = 2;
 	private int _barGoal = 100;
@@ -33,14 +35,21 @@ public class SteeringWheelScript : MonoBehaviour {
 		toggleState = false;
 
 		steeringWheel = GameObject.Find ("SteeringWheel");
+		Cube = GameObject.Find ("Cube");
+		Cube.GetComponent<Rigidbody> ().useGravity = false;
 	}
 
 	public void HudToggleButtonClicked(string name) {
 		toggleState = !toggleState;
 	}
 
-	public void Physic_Btn_1_Clicked(string name) {
-
+	public void Physic_Btn_1_Clicked(string name) {	
+		var newCube = Instantiate (Cube, new Vector3(steeringWheel.transform.position.x, 5, steeringWheel.transform.position.z), new Quaternion());
+		newCube.GetComponent<Rigidbody> ().useGravity = true;
+		Timer t = new Timer ();
+		t.Interval = 6000.0;
+		t.Elapsed += (object sender, ElapsedEventArgs e) => { Destroy(newCube); t.Stop(); };
+		t.Start ();
 	}
 
 	public void Physic_Btn_2_Clicked(string name) {
