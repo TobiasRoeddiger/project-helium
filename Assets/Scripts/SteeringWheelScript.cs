@@ -77,7 +77,7 @@ public class SteeringWheelScript : MonoBehaviour {
 	}
 
 	public void Material_Btn_2_Clicked(string name) {
-		GameObject.Find ("SteeringWheel").ChangeMaterial ("Metallic", MaterialSample.UltradurB_4300);
+		GameObject.Find ("SteeringWheel").ChangeMaterial ("Metallic", MaterialSample.Aluminum_5052);
 		GameObject.Find ("SteeringWheel").GetComponent<MeshFilter> ().mesh = InitialSteeringWheelMesh;
 	}
 
