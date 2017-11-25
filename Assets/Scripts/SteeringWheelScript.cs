@@ -67,8 +67,8 @@ public class SteeringWheelScript : MonoBehaviour {
 		// Move bottom bar if necessary
 		if (_barLocation != _barGoal) {
 			_barLocation = _barLocation + (_barLocation < _barGoal ? 1 : -1) * _barStep;
-			foreach (var component in Hud.GetComponentsInChildren<RectTransform>())
-				component.position = new Vector3(component.position.x, _barLocation, component.position.z);
+			foreach (Transform child in Hud.transform)
+				child.position = new Vector3(child.position.x, _barLocation, child.position.z);
 		}
 	}
 }
