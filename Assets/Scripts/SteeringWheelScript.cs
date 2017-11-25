@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Timers;
+using System;
 
 public class SteeringWheelScript : MonoBehaviour {
 
@@ -12,9 +12,6 @@ public class SteeringWheelScript : MonoBehaviour {
 	private GameObject Hud;
 	private GameObject Cube;
 
-	private int _barStep = 2;
-	private int _barGoal = 100;
-	private int _barLocation = 102;
 	private bool _toggleState;
 	public bool toggleState {
 		get {
@@ -23,7 +20,6 @@ public class SteeringWheelScript : MonoBehaviour {
 		set {
 			_toggleState = value;
 			Hud.SetActive (_toggleState);
-			//_barGoal = _toggleState ? 206 : 100;
 			toggleButton.GetComponentInChildren<Text>().text = (_toggleState ? "v" : "^");
 		}
 	}
@@ -44,12 +40,18 @@ public class SteeringWheelScript : MonoBehaviour {
 	}
 
 	public void Physic_Btn_1_Clicked(string name) {	
-		var newCube = Instantiate (Cube, new Vector3(steeringWheel.transform.position.x, 5, steeringWheel.transform.position.z), new Quaternion());
+
+		var r = (float) steeringWheel.GetComponent<Renderer> ().bounds.size[2] / 4;
+		var rand = ((float) UnityEngine.Random.Range (0, 360)) / 360 * Math.PI * 2;
+
+		float x = (float) (steeringWheel.transform.position.x + Math.Cos(rand) * r);
+		float y = (float) 5f;
+		float z = (float) (steeringWheel.transform.position.x + Math.Sin(rand) * r);
+
+		var newCube = Instantiate (Cube, new Vector3(x, y ,z), new Quaternion());
+		
 		newCube.GetComponent<Rigidbody> ().useGravity = true;
-		Timer t = new Timer ();
-		t.Interval = 6000.0;
-		t.Elapsed += (object sender, ElapsedEventArgs e) => { Destroy(newCube); t.Stop(); };
-		t.Start ();
+		Destroy (newCube, 6f);
 	}
 
 	public void Physic_Btn_2_Clicked(string name) {
@@ -74,12 +76,6 @@ public class SteeringWheelScript : MonoBehaviour {
 
 	public void Update()
 	{
-		// Move bottom bar if necessary
-		//if (_barLocation != _barGoal) {
-		//	_barLocation = _barLocation + (_barLocation < _barGoal ? 1 : -1) * _barStep;
-		//	foreach (Transform child in Hud.transform)
-		//		child.position = new Vector3(child.position.x, _barLocation, child.position.z);
-		//	toggleButton.GetComponentInChildren<Text> ().text = _barLocation;
-		//}
+		
 	}
 }
