@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 namespace UnityEngine.XR.iOS
 {
@@ -24,9 +25,19 @@ namespace UnityEngine.XR.iOS
 		
 		// Update is called once per frame
 		void Update () {
+
+
 			if (Input.touchCount > 0 && m_HitTransform != null)
 			{
 				var touch = Input.GetTouch(0);
+
+				int id = touch.fingerId;
+				if (EventSystem.current.IsPointerOverGameObject(id))
+				{
+					//return if ui touched
+					return;
+				}
+
 				if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
 				{
 					var screenPosition = Camera.main.ScreenToViewportPoint(touch.position);
