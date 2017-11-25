@@ -37,6 +37,7 @@ public class SteeringWheelScript : MonoBehaviour {
 		Cube.GetComponent<Rigidbody> ().useGravity = false;
 
 		InitialSteeringWheelMesh = steeringWheel.GetComponent<MeshFilter> ().mesh;
+
 	}
 
 	public void HudToggleButtonClicked(string name) {
@@ -61,8 +62,9 @@ public class SteeringWheelScript : MonoBehaviour {
 		Destroy (newCube, 6f);
 	}
 
+	bool pressingFireBall = false;
 	public void Physic_Btn_2_Clicked(string name) {
-
+		pressingFireBall = true;
 	}
 
 	public void Physic_Btn_3_Clicked(string name) {
@@ -86,6 +88,6 @@ public class SteeringWheelScript : MonoBehaviour {
 
 	public void Update()
 	{
-		
+
 	}
 }
