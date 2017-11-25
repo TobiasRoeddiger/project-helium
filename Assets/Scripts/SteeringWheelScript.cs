@@ -10,6 +10,9 @@ public class SteeringWheelScript : MonoBehaviour {
 	private GameObject steeringWheel;
 	private GameObject Hud;
 
+	private int _barStep = 2;
+	private int _barGoal = 100;
+	private int _barLocation = 102;
 	private bool _toggleState;
 	public bool toggleState {
 		get {
@@ -17,8 +20,8 @@ public class SteeringWheelScript : MonoBehaviour {
 		}
 		set {
 			_toggleState = value;
-			Hud.SetActive (value);
-			toggleButton.GetComponentInChildren<Text>().text = (_toggleState ? "^" : "v");
+			_barGoal = _toggleState ? 206 : 100;
+			toggleButton.GetComponentInChildren<Text>().text = (_toggleState ? "v" : "^");
 		}
 	}
 
@@ -61,5 +64,11 @@ public class SteeringWheelScript : MonoBehaviour {
 
 	public void Update()
 	{
+		// Move bottom bar if necessary
+		if (_barLocation != _barGoal) {
+			_barLocation = _barLocation + (_barLocation < _barGoal ? 1 : -1) * _barStep;
+			foreach (var component in Hud.GetComponentsInChildren<RectTransform>())
+				component.position = new Vector3(component.position.x, _barLocation, component.position.z);
+		}
 	}
 }
