@@ -73,13 +73,13 @@ public class TechnicalPlasticMaterial : MaterialSample
 }
 
 
-public class RubberMaterial : MaterialSample
+public class MetalMaterial : MaterialSample
 {
 	public override string Type 
 	{
 		get 
 		{
-			return "Rubber";
+			return "Metal";
 		}
 	}
 } 
