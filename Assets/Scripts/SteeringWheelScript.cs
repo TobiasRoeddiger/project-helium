@@ -69,6 +69,7 @@ public class SteeringWheelScript : MonoBehaviour {
 			_barLocation = _barLocation + (_barLocation < _barGoal ? 1 : -1) * _barStep;
 			foreach (Transform child in Hud.transform)
 				child.position = new Vector3(child.position.x, _barLocation, child.position.z);
+			toggleButton.GetComponentInChildren<Text> ().text = _barLocation;
 		}
 	}
 }
