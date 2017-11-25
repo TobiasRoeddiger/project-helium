@@ -12,6 +12,8 @@ public class SteeringWheelScript : MonoBehaviour {
 	private GameObject Hud;
 	private GameObject Cube;
 
+	private Mesh InitialSteeringWheelMesh;
+
 	private bool _toggleState;
 	public bool toggleState {
 		get {
@@ -20,7 +22,7 @@ public class SteeringWheelScript : MonoBehaviour {
 		set {
 			_toggleState = value;
 			Hud.SetActive (_toggleState);
-			toggleButton.GetComponentInChildren<Text>().text = (_toggleState ? "v" : "^");
+			toggleButton.GetComponentInChildren<Text>().text = (_toggleState ? "▼" : "▲");
 		}
 	}
 
@@ -32,13 +34,15 @@ public class SteeringWheelScript : MonoBehaviour {
 
 		steeringWheel = GameObject.Find ("SteeringWheel");
 		Cube = GameObject.Find ("Cube");
-		//Cube.GetComponent<Rigidbody> ().useGravity = false;
+		Cube.GetComponent<Rigidbody> ().useGravity = false;
+
+		InitialSteeringWheelMesh = steeringWheel.GetComponent<MeshFilter> ().mesh;
 	}
 
 	public void HudToggleButtonClicked(string name) {
 		toggleState = !toggleState;
 	}
-
+		
 	public void Physic_Btn_1_Clicked(string name) {	
 
 		var r = (float) steeringWheel.GetComponent<Renderer> ().bounds.size[2] / 2;
@@ -48,7 +52,10 @@ public class SteeringWheelScript : MonoBehaviour {
 		float y = (float) 5f;
 		float z = (float) (steeringWheel.transform.position.z + Math.Sin(rand) * r);
 
-		var newCube = Instantiate (Cube, new Vector3(x, y ,z), new Quaternion());
+		//float x = (float) steeringWheel.transform.position.x;
+     	//float y = (float) 5f;
+		//float z = (float) steeringWheel.transform.position.z;
+		var newCube = Instantiate (Cube, new Vector3(x, y ,z), Cube.transform.rotation);
 		
 		newCube.GetComponent<Rigidbody> ().useGravity = true;
 		Destroy (newCube, 6f);
@@ -64,14 +71,17 @@ public class SteeringWheelScript : MonoBehaviour {
 
 	public void Material_Btn_1_Clicked(string name) {
 		GameObject.Find ("SteeringWheel").ChangeMaterial ("Elastoform", MaterialSample.ElastofoamI_133);
+		GameObject.Find ("SteeringWheel").GetComponent<MeshFilter> ().mesh = InitialSteeringWheelMesh;
 	}
 
 	public void Material_Btn_2_Clicked(string name) {
 		GameObject.Find ("SteeringWheel").ChangeMaterial ("Metallic", MaterialSample.UltradurB_4300);
+		GameObject.Find ("SteeringWheel").GetComponent<MeshFilter> ().mesh = InitialSteeringWheelMesh;
 	}
 
 	public void Material_Btn_3_Clicked(string name) {
 		GameObject.Find ("SteeringWheel").ChangeMaterial ("Spotted", MaterialSample.UltradurB_4300);
+		GameObject.Find ("SteeringWheel").GetComponent<MeshFilter> ().mesh = InitialSteeringWheelMesh;
 	}
 
 	public void Update()
