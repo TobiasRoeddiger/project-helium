@@ -9,7 +9,7 @@ public static class MaterialChanger
 		gObject.GetComponent<Renderer>().material = newMat;
 
 		if (sample != null) {
-			gObject.GetComponent<Meshinator>().m_ForceMultiplier = (float) (1 / sample.ElasticModulus) * 300;
+			gObject.GetComponent<Meshinator>().m_ForceMultiplier = (float) (1 / sample.ElasticModulus) * 500;
 		}
 	}
 }

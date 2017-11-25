@@ -32,7 +32,7 @@ public class SteeringWheelScript : MonoBehaviour {
 
 		steeringWheel = GameObject.Find ("SteeringWheel");
 		Cube = GameObject.Find ("Cube");
-		Cube.GetComponent<Rigidbody> ().useGravity = false;
+		//Cube.GetComponent<Rigidbody> ().useGravity = false;
 	}
 
 	public void HudToggleButtonClicked(string name) {
@@ -41,12 +41,12 @@ public class SteeringWheelScript : MonoBehaviour {
 
 	public void Physic_Btn_1_Clicked(string name) {	
 
-		var r = (float) steeringWheel.GetComponent<Renderer> ().bounds.size[2] / 4;
+		var r = (float) steeringWheel.GetComponent<Renderer> ().bounds.size[2] / 2;
 		var rand = ((float) UnityEngine.Random.Range (0, 360)) / 360 * Math.PI * 2;
 
 		float x = (float) (steeringWheel.transform.position.x + Math.Cos(rand) * r);
 		float y = (float) 5f;
-		float z = (float) (steeringWheel.transform.position.x + Math.Sin(rand) * r);
+		float z = (float) (steeringWheel.transform.position.z + Math.Sin(rand) * r);
 
 		var newCube = Instantiate (Cube, new Vector3(x, y ,z), new Quaternion());
 		
