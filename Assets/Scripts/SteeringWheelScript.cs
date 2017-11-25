@@ -20,7 +20,8 @@ public class SteeringWheelScript : MonoBehaviour {
 		}
 		set {
 			_toggleState = value;
-			_barGoal = _toggleState ? 206 : 100;
+			Hud.SetActive (_toggleState);
+			//_barGoal = _toggleState ? 206 : 100;
 			toggleButton.GetComponentInChildren<Text>().text = (_toggleState ? "v" : "^");
 		}
 	}
@@ -65,11 +66,11 @@ public class SteeringWheelScript : MonoBehaviour {
 	public void Update()
 	{
 		// Move bottom bar if necessary
-		if (_barLocation != _barGoal) {
-			_barLocation = _barLocation + (_barLocation < _barGoal ? 1 : -1) * _barStep;
-			foreach (Transform child in Hud.transform)
-				child.position = new Vector3(child.position.x, _barLocation, child.position.z);
-			toggleButton.GetComponentInChildren<Text> ().text = _barLocation;
-		}
+		//if (_barLocation != _barGoal) {
+		//	_barLocation = _barLocation + (_barLocation < _barGoal ? 1 : -1) * _barStep;
+		//	foreach (Transform child in Hud.transform)
+		//		child.position = new Vector3(child.position.x, _barLocation, child.position.z);
+		//	toggleButton.GetComponentInChildren<Text> ().text = _barLocation;
+		//}
 	}
 }
